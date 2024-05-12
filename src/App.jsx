@@ -10,20 +10,25 @@ import Footer from "./Components/Footer";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 import ShowPage from "./Components/ShowPage";
+import { Results } from "./Components/Results";
 
 function App() {
+
   return (
-    <div>
+    
+    <>
       <Router>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/aboutus" element={<AboutUs />}/>
-          <Route path="/:id" element={<ShowPage />}/>
-        </Routes>
+        < NavBar />
+          <Routes>
+            <Route path="/" element={ <Home /> } />
+            <Route path="/aboutus" element={ <AboutUs /> } />
+            <Route path="/results/:etag" element={ <Results /> } />
+            <Route path="/video/:id" element={ <ShowPage /> } />
+          </Routes>
         <Footer />
       </Router>
-    </div>
+    </>
   );
 }
 
