@@ -5,30 +5,39 @@ import "./App.css";
 // Components
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import NavBar from "./Components/NavBar";
+
 
 // Routes
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 import ShowPage from "./Components/ShowPage";
-import { Results } from "./Components/Results";
+import Results from "./Components/Results";
 
 function App() {
 
-  return (
-    
-    <>
+  return ( 
       <Router>
-        <Header />
-        < NavBar />
-          <Routes>
-            <Route path="/" element={ <Home /> } />
-            <Route path="/aboutus" element={ <AboutUs /> } />
-            <Route path="/results/:etag" element={ <Results /> } />
-            <Route path="/video/:id" element={ <ShowPage /> } />
-          </Routes>
-        <Footer />
-      </Router>
-    </>
+        <div id="topbar">
+          <Header/>
+        </div>
+        <div id="main-section">
+          <div id="sidebar">
+            <NavBar />
+          </div>
+          <div id="main-content-container">
+            <Routes>
+              <Route path="/" element={ <Home /> } />
+              <Route path="/aboutus" element={ <AboutUs /> } />
+              <Route path="/results/:etag" element={ <Results /> } />
+              <Route path="/video/:id" element={ <ShowPage /> } />
+            </Routes>
+          </div>
+        </div>
+        <div id="footer">
+          <Footer /> 
+        </div>  
+    </Router>
   );
 }
 

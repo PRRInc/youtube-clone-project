@@ -1,4 +1,6 @@
-export const Results = () => {
+import "./Results.css";
+
+export default function Results () {
 
     fetch("https://www.googleapis.com/youtube/v3/search?key=AIzaSyByjYAM4SMo8Kq0kUB4dcILgvjxKEgVfsE&part=snippet&q=react%20tutorial&type=video")
     .then((response) => { 
@@ -24,8 +26,6 @@ export const Results = () => {
                     </div>
                 </div>
             )
-        }
-        )
-    }
-    )
+        })
+    })
 }
