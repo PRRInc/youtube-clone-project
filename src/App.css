@@ -9,8 +9,11 @@ body {
 
 #topbar {
     width: 100vw;
-    height: 50px;
+    height: 60px;
     background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    padding: 5px 20px;
 }
 
 #main-section {
