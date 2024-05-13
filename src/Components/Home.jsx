@@ -1,3 +1,9 @@
-export default function Home() {
+import "./Home.css";
 
+export default function Home() {
+    return (
+        <>
+        
+        </>
+    )
 }

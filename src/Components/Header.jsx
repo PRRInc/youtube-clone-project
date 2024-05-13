@@ -3,6 +3,7 @@ import { getAllResults } from "../api/fetch";
 // import ErrorMessage from "./errors/ErrorMessage";
 import { useEffect, useState } from "react";
 import VideoListing from "./VideoListing";
+import "./Header.css";
 
 export default function Header() {
     //   const [loadingError, setLoadingError] = useState(false);
@@ -72,4 +73,16 @@ export default function Header() {
           </section>
       </div>
     );
-  }
+      return (
+        <>
+            <div id="topbar-logo-container">
+                <img src="assets/yt_logo_cmyk_light.svg" alt="Youtube Text Logo"/>
+            </div>
+            <div id="query-container">
+                <input type="text" name="query" id="query-box" placeholder="Search"/>
+                <img src="assets/search.svg" alt="search icon"/>
+            </div>
+    
+        </>
+    )
+}
