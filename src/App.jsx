@@ -29,7 +29,7 @@ function App() {
             <Routes>
               <Route path="/" element={ <Home /> } />
               <Route path="/aboutus" element={ <AboutUs /> } />
-              <Route path="/results/:etag" element={ <Results /> } />
+              <Route path="/results/" element={ <Results /> } />
               <Route path="/video/:id" element={ <ShowPage /> } />
               {/* <Route path="/favorites" element={ <Favorites /> } /> */}
               {/* <Route path="/history" element={ <History /> } /> */}
