@@ -1,0 +1,52 @@
+
+#logo-container {
+    height: 100px;
+    width: 50%;
+    margin: 50px auto;
+}
+
+#youtube-logo {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+#sidebar-elements {
+    text-align: center;
+    margin-top: 250px;
+}
+
+.sidebar-link { 
+    display: flex;
+    flex-direction: row;
+    padding: 15px 20px;
+    background-color: rgb(255, 254, 253);
+    align-content: center;
+}
+
+.sidebar-link:hover {
+    background-color: #FF0000;
+    a {
+        color: white;
+    }
+}
+
+img {
+    height: 20px;
+    margin: 0px 10px;
+}
+
+h5 {
+    color: #FF0000;   
+}
+
+a {
+    text-decoration: none;
+    color: #FF0000;
+    margin: 0px 10px;
+}
+
+hr {
+    width: 80%;
+    border: 0.03em solid #e7d1d1;
+}

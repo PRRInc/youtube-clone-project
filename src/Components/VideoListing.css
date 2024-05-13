@@ -1,0 +1,44 @@
+.video {
+    margin-left: 50px;
+    width: 300px;
+    border: 1.5px solid black;
+    border-radius: 3px;
+    color: white;
+    /* display: grid; */
+    /* grid-template-rows: auto 1fr auto; */
+    padding: 10px 25px;
+    background-color: rgb(107, 66, 66, 0.89);
+  }
+  
+  .note a {
+    border-bottom: 1px solid var(--primary);
+    color: var(--primary);
+    text-decoration: none;
+  }
+  
+  .note .title1 {
+    text-decoration: none;
+    font-variant: small-caps;
+    margin-bottom: 0;
+    color: white
+    
+  }
+  
+  .note .description {
+    font-size: 14px;
+  }
+  
+  .note .details {
+    border-top: 1px solid var(--primary);
+    padding-top: 10px;
+  }
+  
+  .note .details p {
+    font-size: 12px;
+    margin: 0 0 5px;
+  }
+  
+  .note .details span {
+    font-weight: bold;
+  }
+  
