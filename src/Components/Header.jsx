@@ -6,19 +6,21 @@ export default function Header({ search, setSearch }) {
     const [ val, setVal ] = useState("");
     const [ test, setTest ] = useState("")
 
-    function handleChange(e) {
+    function handleSubmit(e) {
         setTest(document.getElementById("query"))
-        setVal(e.target.value);
+        //setVal(e.target.value);
         // setSearch(document.getElementById("query"));
-       // console.log(test)
+       console.log(test)
     }
-    console.log(test)
+    //console.log(test)
     
     return (
         <>
-            <input onChange={handleChange} value={val} id="query" type="text"/>
+            <form onSubmit={handleSubmit}>
+                <input value={val} id="query" type="text"/>
+            </form>
             {/* <p>{search}</p> */}
-            <p>{textSearch}</p>
+            <p>{test}</p>
             
         </>
     )
