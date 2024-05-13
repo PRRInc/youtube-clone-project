@@ -1,4 +1,8 @@
+// import { useEffect, useState } from "react";
+// import { Link, useParams, useNavigate } from "react-router-dom"
+// import { DeleteComment, getComment } from "../api/fetch"
 import "./ShowPage.css";
+// export default function ShowPage() {
 
 export default function ShowPage() {
     return (
