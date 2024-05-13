@@ -43,6 +43,16 @@ export default function Header() {
   
     return (
       <div>
+        <div id="topbar-logo-container">
+            <img src="assets/yt_logo_cmyk_light.svg" alt="Youtube Text Logo"/>
+        </div>
+        <div id="query-container">
+            <form onSubmit={initiateSearch}>
+                <input type="text" className="search-bar" name="query" id="query-box" value={search} placeholder="Search" onChange={(e) => setSearch(e.target.value)}/>
+                <img src="assets/search.svg" alt="search icon"/>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
         {/* {loadingError ? (
           <ErrorMessage />
         ) : ( */}
@@ -52,19 +62,19 @@ export default function Header() {
               <Link to="/notes/new">Add a new note</Link>
             </button> */}
             <br />
-            <form onSubmit={initiateSearch}>
-            <label htmlFor="searchTitle">
+            
+            {/* <label htmlFor="searchTitle">
               <input
                 name="searchItem"
-                className="search-bar"
-                type="text"
-                value={search}
+                
+              
+                
                 id="searchTitle"
-                onChange={(e) => setSearch(e.target.value)}
+                
               />
-              <button type="submit">Submit</button>
-            </label>
-            </form>
+              
+            </label> */}
+            
             <section className="results-index">
               {results?.map((result) => {
                 return <VideoListing result={result} key={result.id.videoId} />;
@@ -73,16 +83,4 @@ export default function Header() {
           </section>
       </div>
     );
-      return (
-        <>
-            <div id="topbar-logo-container">
-                <img src="assets/yt_logo_cmyk_light.svg" alt="Youtube Text Logo"/>
-            </div>
-            <div id="query-container">
-                <input type="text" name="query" id="query-box" placeholder="Search"/>
-                <img src="assets/search.svg" alt="search icon"/>
-            </div>
-    
-        </>
-    )
 }
