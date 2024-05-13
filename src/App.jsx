@@ -4,12 +4,12 @@ import "./App.css";
 
 // Components
 import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+// import Footer from "./Components/Footer";
 
 // Routes
 import Home from "./Components/Home";
-import AboutUs from "./Components/AboutUs";
-import ShowPage from "./Components/ShowPage";
+// import AboutUs from "./Components/AboutUs";
+// import ShowPage from "./Components/ShowPage";
 
 function App() {
   return (
@@ -18,10 +18,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="/aboutus" element={<AboutUs />}/>
-          <Route path="/:id" element={<ShowPage />}/>
+          {/* <Route path="/aboutus" element={<AboutUs />}/> */}
+          {/* <Route path="/:id" element={<ShowPage />}/> */}
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );
