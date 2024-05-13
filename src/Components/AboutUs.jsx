@@ -1,6 +1,6 @@
 import "./AboutUs.css";
 
-export default function AboutUs () {
+export default function AboutUs() {
     return (
         <>
         </>

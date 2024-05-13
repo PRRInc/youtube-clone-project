@@ -1,6 +1,6 @@
 import "./ShowPage.css";
 
-export default function ShowPage () {
+export default function ShowPage() {
     return (
         <>
             <div className="video-container">
