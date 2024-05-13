@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { getAllResults } from "../api/fetch";
-// import ErrorMessage from "./errors/ErrorMessage";
+import ErrorMessage from "../Components/errors/ErrorMessage";
 import { useEffect, useState } from "react";
 import VideoListing from "./VideoListing";
 import "./Header.css";
 
 export default function Header() {
-    //   const [loadingError, setLoadingError] = useState(false);
+      const [loadingError, setLoadingError] = useState(false);
   const [results, setResults] = useState([]);
   //   const [allResults, setAllResults] = useState([]);
     const [search, setSearch] = useState("");
@@ -33,11 +33,11 @@ export default function Header() {
           // setAllResults(response.items);
           console.log(response);
           setResults(response.items);
-          // setLoadingError(false);
+          setLoadingError(false);
         })
         .catch((error) => {
           console.error(error);
-          // setLoadingError(true);
+          setLoadingError(true);
         });
       };
   
