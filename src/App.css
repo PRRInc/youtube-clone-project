@@ -10,7 +10,7 @@ body {
 #topbar {
     width: 100vw;
     height: 50px;
-    background-color: blue;
+    background-color: rgb(255, 255, 255);
 }
 
 #main-section {
@@ -23,7 +23,7 @@ body {
 #sidebar {
     width: 210px;
     height: 100%;
-    background-color: rgb(9, 117, 81);
+    background-color: rgb(255, 255, 255);
 }
 
 #main-content-container {

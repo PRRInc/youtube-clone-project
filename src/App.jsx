@@ -31,12 +31,15 @@ function App() {
               <Route path="/aboutus" element={ <AboutUs /> } />
               <Route path="/results/:etag" element={ <Results /> } />
               <Route path="/video/:id" element={ <ShowPage /> } />
+              {/* <Route path="/favorites" element={ <Favorites /> } /> */}
+              {/* <Route path="/history" element={ <History /> } /> */}
             </Routes>
           </div>
         </div>
         <div id="footer">
           <Footer /> 
         </div>  
+
     </Router>
   );
 }
