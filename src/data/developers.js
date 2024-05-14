@@ -1,5 +1,6 @@
 const developers = [
     {
+        id: "LJ",
         name: "Lynnette Jacobs",
         location: "New Jersey",
         profileImage: "assets/defaultprofilephoto.svg",
@@ -11,6 +12,7 @@ const developers = [
         skillsDescription: "Expert in diagnosing and resolving complex technical issues across the full stack, ensuring seamless and efficient software performance."
     },
     {
+        id: "JGR",
         name: "Jorge Godoy Rodriguez",
         location: "New Jersey",
         profileImage: "assets/defaultprofilephoto.svg",
@@ -22,6 +24,7 @@ const developers = [
         skillsDescription: "Skilled in translating technical concepts for diverse audiences, facilitating clear collaboration and maintaining comprehensive project documentation."
     },
     {
+        id: "PR",
         name: "Patrick Rogers",
         location: "New Jersey",
         profileImage: "assets/defaultprofilephoto.svg",

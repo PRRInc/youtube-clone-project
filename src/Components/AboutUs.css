@@ -1,0 +1,131 @@
+.page-section-header {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.title-linebreak {
+    border: 0.03em solid lightgrey;
+    width: 95%;
+}
+
+#dev-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+   padding: 50px;
+}
+
+.developer-profile-container {
+    width: 350px;
+    height: 350px;
+    background-color: lightgray;
+    border-radius: 50px;
+    box-shadow: 2px 3px 5px rgb(201, 201, 201);
+    position: relative;
+    margin: 10px;
+}
+
+.dev-profile-photo-container {
+    width: 125px;
+    height: 125px;
+    position: absolute;
+    background-color: black;
+    border-radius: 100%;
+    top: 30px;
+    left: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+       height: 100%;
+       width: 100%;
+       border-radius: 100%;
+    }
+
+}
+
+.dev-profile-specs {
+    width: 350px;
+    height: 210px;
+    background-color: whitesmoke;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-top: 75px;
+    padding-top: 35px;
+    position: absolute;
+    top: 35px;
+}
+
+.dev-name {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    color: rgb(117, 117, 117);
+    font-weight: 500;
+}
+
+.dev-location {
+    text-align: center;
+    font-style: italic;
+    margin: 0px;
+    color: rgb(153, 153, 153);
+
+}
+
+.dev-profiles-links {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.dev-profile-icon {
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.dev-profile-icon:hover {
+    transform: translateY(-5px);
+    transition: transform 0.15s ease-in-out;
+}
+
+#app-functionality-info {
+    padding: 30px;
+    margin-bottom: 50px;
+}
+.feature-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.skills-description {
+    text-align: center;
+    font-size: 12px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(117, 117, 117);
+}
+
+.about-feature-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.feature-description {
+    width: 800px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
