@@ -48,8 +48,8 @@ function App() {
             <Routes>
               <Route path="/" element={ <Home /> } />
               <Route path="/aboutus" element={ <AboutUs /> } />
-              <Route path="/results/" element={ <Results results={results} search={search}/> } />
-              <Route path="/video/" element={ <ShowPage /> } />
+              <Route path="/results" element={ <Results results={results} search={search}/> } />
+              <Route path="/video" element={ <ShowPage /> } />
               {/* <Route path="/favorites" element={ <Favorites /> } /> */}
               {/* <Route path="/history" element={ <History /> } /> */}
             </Routes>
