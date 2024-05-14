@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(230, 88, 88);
+    background-color: #FF0000;
     font-family: Avenir;
     width: 100vw;
     margin: 0;
@@ -37,6 +37,6 @@ body {
 #footer {
     width: 100vw;
     height: 100px;
-    background-color: brown;
+    background-color: rgb(49, 49, 49);
 }
 

@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: 360px 1fr;
   background-color: rgb(255, 255, 255);
-  /* box-shadow: 2px 2px 4px #aaaaaa; */
+  transition: background-color 2s ease-out 100ms;
 }
 
 .result-video-preview:hover {
