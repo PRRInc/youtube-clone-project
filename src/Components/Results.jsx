@@ -1,11 +1,16 @@
+import VideoListing from "./VideoListing";
+import { useParams } from "react-router-dom";
 import "./Results.css";
 
-export default function Results ( { results } ) {
+export default function Results ( { results, search } ) {
+
+    // let { etag } = useParams();
+    // console.log(etag);
 
     return (
         <>
             <div className="sort-dropdown">
-                <h4>Search Results for "puppies"</h4>
+                <h4>Search Results for "{ search }"</h4>
                 <select className="select-sort">
                     <option>Sort by</option>
                     <option value="date">Date</option>
@@ -15,10 +20,10 @@ export default function Results ( { results } ) {
             </div>
             <div className="results-container">
             
-            {results?.map((result) => {
+            { results?.map((result) => {
                 return (
                     <VideoListing result={result} key={result.id.videoId} />
-                )})}
+                )}) }
 
                 <div className="result-video-preview">
                     <div className="result-video-thumbnail" >

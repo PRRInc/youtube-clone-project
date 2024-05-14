@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { getAllResults } from "./api/fetch";
+
+import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 import "./App.css";
 
 // Components
@@ -16,10 +18,27 @@ import Results from "./Components/Results";
 
 function App() {
 
+  const [loadingError, setLoadingError] = useState(false);
+  const [results, setResults] = useState([]);
+  const [search, setSearch] = useState("");
+
+  function initiateSearch(query) {
+    getAllResults(query)
+      .then((response) => {
+        console.log(response);
+        setResults(response.items);
+        setLoadingError(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoadingError(true);
+      });
+  }
+
   return ( 
       <Router>
         <div id="topbar">
-          <Header/>
+          <Header setSearch={setSearch} initiateSearch={initiateSearch} search={search} />
         </div>
         <div id="main-section">
           <div id="sidebar">
@@ -29,7 +48,7 @@ function App() {
             <Routes>
               <Route path="/" element={ <Home /> } />
               <Route path="/aboutus" element={ <AboutUs /> } />
-              <Route path="/results/" element={ <Results /> } />
+              <Route path="/results/" element={ <Results results={results} search={search}/> } />
               <Route path="/video/" element={ <ShowPage /> } />
               {/* <Route path="/favorites" element={ <Favorites /> } /> */}
               {/* <Route path="/history" element={ <History /> } /> */}
@@ -40,7 +59,7 @@ function App() {
           <Footer /> 
         </div>  
     </Router>
-  );
+  )
 }
 
 export default App;

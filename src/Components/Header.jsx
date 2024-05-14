@@ -1,38 +1,31 @@
-import { Link } from "react-router-dom";
-import { getAllResults } from "../api/fetch";
-import ErrorMessage from "../Components/errors/ErrorMessage";
-import { useEffect, useState } from "react";
-import VideoListing from "./VideoListing";
-import Results from "./Results";
+// import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
-export default function Header() {
-  const [loadingError, setLoadingError] = useState(false);
-  const [results, setResults] = useState([]);
-  const [search, setSearch] = useState("");
-  
-  function initiateSearch(e) {
+export default function Header({ setSearch, initiateSearch, search }) { 
+
+  // const navigate = useNavigate();
+  function handleSubmit(e) {
     e.preventDefault();
-    getAllResults(search)
-    .then((response) => {
-        console.log(response);
-        setResults(response.items);
-        <Results results={ results }/>
-        setLoadingError(false);
-    })
-    // .catch((error) => {
-    //   console.error(error);
-    //   setLoadingError(true);
-    // });
-  };
+    initiateSearch(search);
+    // navigate("/results/")
+  }
 
   return (
     <>
-      <img id="topbar-logo-container" src="assets/yt_logo_cmyk_light.svg" alt="Youtube Text Logo"/>
-      <form onSubmit={ initiateSearch } id="query-container">
-          <input type="text" name="query" id="query-box" value={ search } placeholder="Search" onChange={(e) => setSearch(e.target.value)}/>
-          <button type="submit" id="search-button"><img src="assets/search.svg" id="search-submit-button"/></button>
+      <img id="topbar-logo-container" src="assets/yt_logo_cmyk_light.svg" alt="YouTube Text Logo" />
+      <form onSubmit={ handleSubmit } id="query-container">
+        <input
+          type="text"
+          name="query"
+          id="query-box"
+          value={ search }
+          placeholder="Search"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button type="submit" id="search-button">
+          <img src="assets/search.svg" id="search-submit-button" alt="Search" />
+        </button>
       </form>
-    </> 
+    </>
   );
 }
