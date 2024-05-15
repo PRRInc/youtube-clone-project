@@ -14,6 +14,7 @@ export default function Home() {
             categorizedVideoArr = res.item;
             return categorizedVideoArr})
     }
+  
     return (
         <> 
           <div className="category-container">
