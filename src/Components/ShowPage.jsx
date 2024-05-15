@@ -1,31 +1,53 @@
-// import { useEffect, useState } from "react";
-// import { Link, useParams, useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"
 // import { DeleteComment, getComment } from "../api/fetch"
 import "./ShowPage.css";
-// export default function ShowPage() {
+// import ErrorMessage from "./errors/ErrorMessage.jsx";
 
-export default function ShowPage({ result }) {
+export default function ShowPage({ initiateVideo, videoShow }) {
+
+    const { id } = useParams();
+
+    useEffect(() => {
+        initiateVideo(id)
+      }, []);
+    
+   
+    const [showFullDescription, setShowFullDescription] = useState(false);
+      
+        const toggleDescription = () => {
+          setShowFullDescription(!showFullDescription);
+        };
+
+      
     return (
         <>
             <div className="video-container">
                 <div className="video-view">
+                    <iframe id="ytplayer" type="text/html" width="640" height="360" src={`https://www.youtube.com/embed/${id}?autoplay=1`} frameborder="0"></iframe>
                 </div>
                 <div className="details-container">
                     <div className="top-row-details row">
-                        <h3>OMG! Did You Know About This Sample Video?!?</h3>
+                        <h3>{videoShow ? videoShow.snippet.title: "OMG! Did You Know About This Sample Video?!?"}</h3>
                         <div className="uploader-info row">
-                            <p>The John Doe Show</p>
+                            <p>{videoShow ? videoShow.snippet.channelTitle: "The John Doe Show"}</p>
                             <img src="assets/pexels-photo-762020.jpeg" alt="Channel Name" className="uploader-profile-photo" />
                         </div>
                     </div>
                     < div className="mid-row-details row">
-                        <p>521,600 Views</p>
-                        <p>Uploaded January 1, 2000</p>
+                        <p>{videoShow ? videoShow.statistics.viewCount:"521,600"} Views</p>
+                        <p>Uploaded {videoShow ? new Date(videoShow.snippet.publishedAt).toDateString() : "January 1, 2000"}</p>
                     </div>
+                    {videoShow && videoShow.snippet && (
                     <div className="row bottom-row-details">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in </p>
+                        <p>
+                            {showFullDescription ? videoShow.snippet.description : `${videoShow.snippet.description.slice(0, 100)}...`}
+                            <span onClick={toggleDescription} style={{ cursor: "pointer", color: "blue" }} >
+                            {showFullDescription ? " Show Less" : " Show More"}</span>
+                        </p>
                         <img src="assets/like.svg" alt="Like Video Icon" className="like-icon row"/>
                     </div>
+                    )}
                 </div>
             </div>
             <hr />
