@@ -4,6 +4,13 @@ import "./Results.css";
 
 export default function Results ( { results, search } ) {
 
+// const { searchTerm } = useParams();
+// const decodedSearchTerm = decodeURIComponent(searchTerm);
+
+// console.log("searchTerm:", searchTerm);
+// console.log("decodedSearchTerm:", decodedSearchTerm);
+    
+
     // let { etag } = useParams();
     // console.log(etag);
 
