@@ -18,7 +18,7 @@ export default function Home() {
         <> 
           <div className="category-container">
                 <h3>Category</h3>
-                    { categoryNumVals.map( val => {
+                    {/* { categoryNumVals.map( val => {
                         getVideosByCatgeory(val).map( el =>
                             {
                                 return ( 
@@ -43,7 +43,7 @@ export default function Home() {
                             }
                         );
                         })
-                    }
+                    } */}
             </div>
         </>
     )
