@@ -1,13 +1,16 @@
-// import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Header.css";
 
 export default function Header({ setSearch, initiateSearch, search }) { 
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+  const searchTerm = useParams();
+
   function handleSubmit(e) {
     e.preventDefault();
+    // const encodedSearchTerm = encodeURIComponent(search); // Encode the search term
+    navigate(`/results/${search}`); // Update the path with the encoded search term
     initiateSearch(search);
-    // navigate("/results/")
   }
 
   return (
