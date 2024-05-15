@@ -1,8 +1,15 @@
+#sidebar-container {
+    position: relative;
+}
+
 
 #logo-container {
+    position: absolute;
     height: 100px;
     width: 50%;
-    margin: 50px auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 200px;
 }
 
 #youtube-logo {
@@ -13,31 +20,41 @@
 
 #sidebar-elements {
     text-align: center;
-    margin-top: 250px;
+    margin-top: 160px;
 }
 
 .sidebar-link { 
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     padding: 15px 20px;
-    background-color: rgb(255, 254, 253);
-    align-content: center;
-}
-
-.sidebar-link:hover {
     background-color: #FF0000;
+
     a {
         color: white;
     }
 }
 
+.sidebar-link:hover {
+    background-color: #d80000;
+}
+
 img {
+    grid-template-columns: 0 / 1;
     height: 20px;
     margin: 0px 10px;
 }
 
+.nav-link {
+    grid-template-columns: 1 / span end;
+    text-align: center;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+
 h5 {
-    color: #FF0000;   
+    color: #FF0000;  
 }
 
 a {
