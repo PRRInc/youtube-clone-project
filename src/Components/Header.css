@@ -34,3 +34,24 @@ input:focus {
     outline-color: #FF0000;
 
 }
+
+.dropdown-container {
+    border: 1.5px solid black;
+    width: 300px;
+    margin-left: 200px;
+}
+
+.dropdown-container.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    z-index: 100;
+    transition: var(--speed) ease;
+    background-color: white;
+    border-radius: 5px;
+    border-color: #FF0000;
+}
+
+.dropdown-container.inactive {
+    opacity: 0;
+}

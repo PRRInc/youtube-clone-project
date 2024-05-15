@@ -1,6 +1,9 @@
 import "./Results.css";
 
-export default function Results () {
+
+export default function Results ({ results }) {
+
+    console.log(results);
 
     return (
         <>
@@ -14,6 +17,7 @@ export default function Results () {
                 </select>
             </div>
             <div className="results-container">
+                {results.map(obj => {
                 <div className="result-video-preview">
                     <div className="result-video-thumbnail" >
                         <img src="assets/test-thumbnail.webp" alt="Video Thumbnail"/>
@@ -37,6 +41,7 @@ export default function Results () {
                         <p className="video-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in </p>
                     </div>
                 </div>
+                })}
                 <div className="result-video-preview">
                     <div className="result-video-thumbnail" >
                         <img src="assets/test-thumbnail.webp" alt="Video Thumbnail"/>

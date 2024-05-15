@@ -1,45 +1,49 @@
 import { Link } from "react-router-dom";
 import { getAllResults } from "../api/fetch";
-import ErrorMessage from "../Components/errors/ErrorMessage";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import ErrorMessage from "../Components/errors/ErrorMessage";
 import VideoListing from "./VideoListing";
 import "./Header.css";
 
-export default function Header() {
+export default function Header( { results, setResults } ) {
       const [loadingError, setLoadingError] = useState(false);
-  const [results, setResults] = useState([]);
-  //   const [allResults, setAllResults] = useState([]);
-    const [search, setSearch] = useState("");
+    //   const [results, setResults] = useState([]);
+      const [search, setSearch] = useState("");
+      const navigate = useNavigate();
+
+      const [ prevSearch, setPrevSearch ] = useState([]);
+      const [ dropdown, setDropdown ] = useState(false);
+
     
-  
-  //   function handleSearch(event) {
-  //     const title = event.target.value;
-  //     const result = title.length ? filterResults(title, results) : results;
-    
-  //     setSearch(title);
-  //     setResults(result);
-  //   }
-  
-  //   function filterResults(search, results) {
-  //     return results.filter((result) => {
-  //       return result.snippet.title.toLowerCase().match(search.toLowerCase());
-  //     });
-  //   }
   
    function initiateSearch(e) {
       e.preventDefault();
+      let currValue = document.getElementById("query-box").value;
+      console.log(currValue);
       getAllResults(search)
         .then((response) => {
           // setAllResults(response.items);
           console.log(response);
           setResults(response.items);
           setLoadingError(false);
+          if (!prevSearch.includes(currValue)) {
+            setPrevSearch([...prevSearch, currValue]);
+          }
+          setDropdown(false);
         })
         .catch((error) => {
           console.error(error);
           setLoadingError(true);
         });
-      };
+      navigate('/results/');
+   };
+
+  //  function handleDropdownSearch(e) {
+  //     console.log(e.target.value);
+  //  }
+
   
     return (
       <div>
@@ -48,10 +52,18 @@ export default function Header() {
         </div>
         <div id="query-container">
             <form onSubmit={initiateSearch}>
-                <input type="text" className="search-bar" name="query" id="query-box" value={search} placeholder="Search" onChange={(e) => setSearch(e.target.value)}/>
+                <input type="text" className="search-bar" name="query" id="query-box" value={search} placeholder="Search" onClick={(e) => setDropdown(!dropdown)} onChange={(e) => setSearch(e.target.value)}/>
                 <img src="assets/search.svg" alt="search icon"/>
                 <button type="submit">Submit</button>
             </form>
+        </div>
+        <div className={`dropdown-container ${dropdown ? 'active' : 'inactive'}`}>
+          {prevSearch.map(ele => <p onClick={(e) => {
+            getAllResults(ele).then(response => {
+              console.log(response);
+              setResults(response.items);
+              setLoadingError(false);
+            })}} id={ele} key={ele} className="dropdown-item" value={ele}>{ele}</p>)}
         </div>
         {/* {loadingError ? (
           <ErrorMessage />
